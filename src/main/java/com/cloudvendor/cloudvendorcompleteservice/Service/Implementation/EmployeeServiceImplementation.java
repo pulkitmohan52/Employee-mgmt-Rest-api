@@ -5,6 +5,8 @@ import com.cloudvendor.cloudvendorcompleteservice.Exception.EmployeeNotFoundExce
 import com.cloudvendor.cloudvendorcompleteservice.Model.Employee;
 import com.cloudvendor.cloudvendorcompleteservice.Repository.EmployeeRepository;
 import com.cloudvendor.cloudvendorcompleteservice.Service.EmployeeService;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -61,7 +63,7 @@ public class EmployeeServiceImplementation implements EmployeeService {
     }
 
     @Override
-    public List<Employee> getAllEmployees() {
-        return employeeRepository.findAll();
+    public Page<Employee> getAllEmployees(Pageable pageable) {
+        return employeeRepository.findAll(pageable);
     }
 }

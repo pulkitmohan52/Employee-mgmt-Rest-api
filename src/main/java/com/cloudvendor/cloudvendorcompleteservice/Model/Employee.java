@@ -15,12 +15,14 @@ public class Employee {
     @Column(unique = true, nullable = false)
     private String employeeEmail;
     private Long employeePhoneNumber;
+    private double salary;
 
-    public Employee(Long phoneNumber, String employeeEmail, String employeeName, String employeeId) {
+    public Employee(Long phoneNumber, String employeeEmail, String employeeName, String employeeId, double salary) {
         this.employeePhoneNumber = phoneNumber;
         this.employeeEmail = employeeEmail;
         this.employeeName = employeeName;
         this.employeeId = employeeId;
+        this.salary = salary;
     }
     public Employee() {
 
@@ -57,4 +59,8 @@ public class Employee {
     public void setEmployeePhoneNumber(Long employeePhoneNumber) {
         this.employeePhoneNumber = employeePhoneNumber;
     }
+
+    public double getSalary() { return salary; }
+
+    public void setSalary(double salary) { this.salary = salary; }
 }
